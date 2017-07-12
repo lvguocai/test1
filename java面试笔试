@@ -1,0 +1,467 @@
+1, 单例：
+public class Singleton {
+	//构造函数私有化
+   private Singleton(){
+	   System.out.println("我的实例被创建了");
+   }
+   private static Singleton singleton = null;
+   //静态方法
+   public static Singleton getInstance(){
+	   
+	   if(singleton == null){
+		   singleton = new Singleton();
+	   }
+	   return singleton;
+   }
+}
+2，数组相关：
+int[] a = new int[10];
+数组长度  a.length
+比较两个数组相等，不能采用==或者equals()方法，比较是否为同一个对象。，要自己去实现这个方法
+
+区别
+数组特点：大小固定，只能存储相同数据类型的数据
+集合特点：大小可动态扩展，可以存储各种类型的数据
+
+4修饰符
+  Java中类的修饰符有以下几种：private 、default（package）、protect、public，其范围如下表：
+范围	private	default	protected	public
+同一类	√	√	√	√
+同一包中的类	 	√	√	√
+同一包中的类、不同包中的子类	 	 	√	√
+所有	 	 	 	√
+
+补充：还有final、和abstract修饰符：
+
+5，集合：
+
+
+
+
+异常
+6，继承
+7，接口、实现类
+8，String
+9多线程
+10java虚拟机 跨平台
+
+
+5
+
+
+
+不定参数
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+http://www.cnblogs.com/mengdd/archive/2013/01/04/2844264.html
+
+Java 数组基础
+数组
+　　数组（Array）：相同类型数据的集合。
+
+　　方式1（推荐，更能表明数组类型）
+　　type[] 变量名 = new type[数组中元素的个数];
+　　比如：
+　　int[] a = new int[10];
+　　数组名，也即引用a，指向数组元素的首地址。
+　　方式2（同C语言）
+　　type变量名[] = new type[数组中元素的个数];
+　　如：
+　　int a[] = new int[10];
+　　方式3 定义时直接初始化
+　　type[] 变量名 = new type[]{逗号分隔的初始化值};
+　　其中红色部分可省略，所以又有两种：
+　　int[] a = {1,2,3,4};
+　　int[] a = new int[]{1,2,3,4};
+
+数组长度
+　　Java中的每个数组都有一个名为length的属性，表示数组的长度。
+　　length属性是public final int的，即length是只读的。数组长度一旦确定，就不能改变大小。
+
+
+tips：查看java源代码
+http://www.cnblogs.com/tianguook/archive/2012/10/05/2712098.html
+
+
+Java集合和数组的区别
+集合和容器都是Java中的容器。
+ 
+
+http://www.cnblogs.com/summers/p/4094260.html
+
+vector是通过封装数组实现的，大小动态的，同时线程安全的。
+
+说、那个排序怎么写？？？
+
+
+
+java中的集合和数组
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45	数组Array和集合的区别：
+ 
+(1)数组是大小固定的，并且同一个数组只能存放类型一样的数据（基本类型/引用类型）
+ 
+(2)JAVA集合可以存储和操作数目不固定的一组数据。 (3)若程序时不知道究竟需要多少对象，需要在空间不足时自动扩增容量，则需要使用容器类库，array不适用。
+ 
+联系：使用相应的toArray()和Arrays.asList()方法可以回想转换。
+ 
+一.集合的体系结构：
+ 
+List、Set、Map是这个集合体系中最主要的三个接口。 List和Set继承自Collection接口。 Map也属于集合系统，但和Collection接口不同。
+ 
+Set不允许元素重复。HashSet和TreeSet是两个主要的实现类。Set 只能通过游标来取值，并且值是不能重复的。
+ 
+List有序且允许元素重复。ArrayList、LinkedList和Vector是三个主要的实现类。 ArrayList 是线程不安全的， Vector 是线程安全的，这两个类底层都是由数组实现的 LinkedList 是线程不安全的，底层是由链表实现的
+ 
+Map 是键值对集合。其中key列就是一个集合，key不能重复，但是value可以重复。 HashMap、TreeMap和Hashtable是Map的三个主要的实现类。 HashTable 是线程安全的，不能存储 null 值 HashMap 不是线程安全的，可以存储 null 值
+
+
+|-- ArrayList：底层的数据结构使用的是数组结构（数组长度是可变的百分之五十延长）（特点是查询很快，但增删较慢）线程不同步
+|-- LinkedList：底层的数据结构是链表结构（特点是查询较慢，增删较快）
+|-- Vector：底层是数组数据结构线程同步（数组长度是可变的百分之百延长）（无论查询还是增删都很慢，被ArrayList替代了
+
+
+java 集合排序
+第一个方法要求所排序的元素类必须实现java.lang.Comparable接口。
+第二个方法要求实现一个java.util.Comparator接口。
+
+
+http://pengjiaheng.iteye.com/blog/518623
+jvm调优，先保留着哈，没问题的；
+
+
+http://www.cnblogs.com/ITtangtang/p/3976820.html
+String  类讲的很好，但是有错别字什么的，注意区分
+
+StringBuffer：线程安全的
+构造函数
+java异常的学习；
+ 
+停水停电；
+
+ 
+
+ 
+
+JAVA中异常处理机制很勤劳的帮我做了这一切，它会准确的告诉，程序的某某行，出了某某错误，这样我们就可以轻而易举的找出错误，解决错误咯
+
+http://blog.csdn.net/gaga704/article/details/45581897
+他写的原因也特别好哈！！
+
+java.lang.ArithmeticException: / by zero
+	at com.imooc.test.TryCatchTest.test(TryCatchTest.java:32)
+	at com.imooc.test.TryCatchTest.main(TryCatchTest.java:8)
+抛出异常了!!!
+test()方法，执行完毕！返回值为：-1
+
+
+java.lang.ArithmeticException: / by zero
+	at com.imooc.test.TryCatchTest.test2(TryCatchTest.java:64)
+	at com.imooc.test.TryCatchTest.main(TryCatchTest.java:16)
+抛出异常了!!!
+这是finally
+我是result！！我的值是： 999
+test2()方法，执行完毕！返回值为：999
+
+
+
+
+java.lang.ArithmeticException: / by zero
+	at com.imooc.test.TryCatchTest.test3(TryCatchTest.java:94)
+	at com.imooc.test.TryCatchTest.main(TryCatchTest.java:16)
+抛出异常了!!!
+这是finally
+我是result！！我的值是： 391
+test3()方法，执行完毕！返回值为：391
+
+http://www.cnblogs.com/interdrp/p/4095846.html
+java里面不是可以保证finally一定会执行的么，为什么不可以在finally块做return？？？
+因此，return一定要放到finally外面。
+
+The public type Main must be defined in its own file
+多线程的学习
+1，构造方法为什么不能有返回值？？
+2，为什么一个文件里面不能有连个public的类？？
+3为什么有参的构造函数会淹没掉无参的构造函数；
+ 
+类名加包名之后不能有重复、命名空间； 
+多线程的相关东西，要好好学习；
+java默认的int和double
+对象最终的初始化值与构建方法中的值一致。因此:
+构建方法 > 显式初始值 > 默认初始值
+(事实上，所谓的优先级与初始化时的执行顺序有关，我将在以后深入这一点)
+
+
+http://www.cnblogs.com/lwbqqyumidi/p/3821389.html
+今天开始学习servlet的相关知识；包括过滤器、拦截器等
+<welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+这就是引导页
+搞清楚请求转发和重定向之间的区别！！！
+怎么区分是doget还是dopost请求，除了get、post的区分之外，还有其他的问题吗？？
+  <!-- 1.使用servlet节点来配置一个Servlet -->
+  <servlet>
+  	<servlet-name>hello</servlet-name>
+  	<servlet-class>com.kaishengit.web.HelloServlet</servlet-class>
+  <!-- key→value形式的数据 -->→value形式的数据 -->
+  	<init-param>
+  		<param-name>username</param-name>
+  		<param-value>tom</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>password</param-name>
+  		<param-value>123456</param-value>
+  	</init-param>
+<!-- 配置tomcat启动时来构造及初始化Servlet 数字越小加载顺序越靠前 -->
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <!-  <!-- 2.配置Servlet的请求名称 -->
+  <servlet-mapping>
+  <!-- 注意需要和servlet节点中的servlet-name名称要相同 -->	<!-- 注意需要和servlet节点中的servlet-name名称要相同 -->
+  	<servlet-name>hello</servlet-name>
+  	<url-pattern>/hello.jspx</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login.jspx</url-pattern>
+  </servlet-mapping>
+
+请求流程
+  	1.客户端发送
+  	2.容器根据hello.jspx找到匹配的url-pattern配置项
+  	3.根据url-pattern找到servlet-mapping中的serlvet-name
+  	4.根据servlet-mapping中的servlet-name找到serlvet中的servlet-name
+  	5.根据serlvet中的servlet-name找到servlet-class
+  	6.根据Java中反射机制动态生成servlet-class中配置的Servlet对象
+  	7.根据请求方式来决定调用的是doGet还是doPost方法
+
+
+第一个servlet
+init、doget、dopost、destroy方法
+http://blog.sina.com.cn/s/blog_8444778b0100ssm3.html等会再看；
+1.继承自javax.servlet.http.HttpSerlvet类
+ * 2.重写doGet和doPost方法，以适应get请求和post请求
+ * 3.在web.xml中进行配置
+ * 
+ * 注意：1个servlet有三个名字 a.类名  b.在<serlvet-name>中配置的名字 c.url-pattern中的名字
+ * 
+ * 4.一个Serlvet对象在整个Web容器中只有一个对象存在，每次请求会产生独立的线程来访问service方法
+ * 所以要避免在serlvet中声明实例变量，防止线程不安全问题
+ * 5.第一次来请求一个serlvet时，会调用构造方法→初始化方法→service方法（非load-on-startup配置）
+ * 6.第2（n）次来请求是，只会调用service方法
+ * 7.容器关闭时调用destory方法
+
+tar是通用的另一种打包格式，为了部署到服务器时方便。而jar是java app server识别的java部署格式，其实是Zip文件，只是内部的文件有规范。war是专用于web app的jar。另外还有用于enterprise app的ear后缀。
+看怎么tomcat下怎么部署war包
+http://blog.csdn.net/inter_peng/article/details/42833587
+
+
+
+
+关于接口，总结的太详细了；
+/*
+ * 1.接口使用关键字interface来修饰
+ * 2.接口中所有的方法都是抽象方法
+ * 3.接口中不能存在普通方法
+ * 4.接口不能被实例化（不能被new）
+ * 5.接口中的方法默认是public abstract
+ * 6.接口中不能声明变量，只能声明常量
+ * 7.常量的修饰默认是putlic static final
+ * 8.一个类可以实现多个接口
+ * 9.接口可以继承自多个接口，但不能继承自类
+ * 10.一个类实现一个接口时必须实现这个接口中的所有方法
+ * 11.如果方法的参数为接口，那么就代表该参数可以传入此接口的所有实现类的对象
+ */
+//1.抽象类不能被实例化（不能被new）
+	//2.抽象类存在的意义就是被继承
+	//3.抽象类不能具有私有的构造方法
+	//4.子类在继承抽象类时必须实现抽象类中的所有抽象方法。除非子类也是抽象类
+
+
+java反射的学习：
+慕课网
+jdbc  like
+connection.PreparedStatement("select * from student where name like ? " );       (假如学生表名为student，姓名字段为name)
+setString(1，"%华%");  
+直接传递参数："%华%"
+
+maven
+ssm试试哈
+用spring整合mybaties； 用心学习哈；看看少哪些配置文件；
+http://www.cnblogs.com/wangmingshun/p/5674633.html
+
+
+http://blog.csdn.net/lilvpei2/article/details/46881823
+spring生命周期 init-method destroy-methd 不要和prototype一起用(原因未知)
+
+构造方法需要用public修饰，要不然没法被别的包下面的类引用该类；
+
+http://blog.csdn.net/tenor/article/details/4077079
+
+
+今天要把增删改查做完，看jpa的一对一、一对多、多对多怎么玩；看通用方法怎么玩；
+看一对多的能不能也整合成通用方法
+
+1，先做增删改查；2再做通用方法；3再做一对多；
+2，为什么要用int的封装类；
+
+ 
+
+ 
+
+
+ 
+
+ 
+
+1, Java虚拟机:
+	 Java虚拟机是一个可以执行Java字节码的虚拟机进程 不同的操作系统有不同版本的jvm
+2, JDK和JRE的区别:
+	JDK是完整的Java软件开发包，包含了JRE，编译器和其他的工具(比如：JavaDoc，Java调试器)
+3, ”static”关键字
+	Java中static方法不能被覆盖，因为方法覆盖是基于运行时动态绑定的，而static方法是编译时静态绑定的。	static方法跟类的任何实例都不相关
+4, 不能在static环境中访问非static变量
+	static变量在Java中是属于类的，它在所有的实例中的值是一样的。当类被Java虚拟机载入的时候，会对	static变量进行初始化。如果你的代码尝试不用实例来访问非static的变量，编译器会报错，因为这些变量	还没有被创建出来，还没有跟任何实例关联上
+
+5, 基本数据类型
+	byte ：8
+	short 16
+	int 32
+	long 64
+	float 32
+	double 64
+	boolean
+	char 16
+
+	List<Integer> nums;
+	Ingeter是int的包装类，int的初值为0，Ingeter的初值为null。
+	基本类型和它们对应包装类之间的自动转换
+	 int可以是负数，注意Integer的缓存问题
+
+    Integer d1 = 123;
+    Integer d2 = 123;
+
+    Integer d3 = 1234;
+    Integer d4 = 1234;
+
+    System.out.println(d1 == d2);
+    System.out.println(d3 == d4);
+
+    true 
+    false
+
+6, 构造函数
+	作用：用于构造类的对象（实例）经常也用来初始化对象的属性
+	通过new关键字调用构造方法
+	构造方法虽然有返回值，但是不能定义返回值类型（返回值的类型是本类）不能在构造方法中写return
+	如果我们没有定义构造器，则编译器会自动定义一个无参的构造函数如果已定义构造函数，则编译器不会再定义一个构造函数
+
+7, Java支持多继承么？
+	不支持，Java不支持多继承。每个类都只能继承一个类，但是可以实现多个接口。
+
+8, 接口和抽象类的区别
+	接口中所有的方法隐含的都是抽象的。而抽象类则可以同时包含抽象和非抽象的方法。
+	类可以实现很多个接口，但是只能继承一个抽象类
+	类如果要实现一个接口，它必须要实现接口声明的所有方法。但是，类可以不实现抽象类声明的所有方法，当然，在这种情况下，类也必须得声明成是抽象的。
+	抽象类可以在不提供接口方法实现的情况下实现接口。
+	Java接口中声明的变量默认都是final的。抽象类可以包含非final的变量。
+	Java接口中的成员函数默认是public的。抽象类的成员函数可以是private，protected或者是public。
+	接口是绝对抽象的，不可以被实例化。抽象类也不可以被实例化，但是，如果它包含main方法的话是可以被调用的。
+
+
+Java线程
+
+19,Java集合类
+ 
+	Map  键不能重复，否则后者覆盖前者
+
+20, 迭代器(Iterator)
+	Iterator接口提供了很多对集合元素进行迭代的方法。包含hasNext(),next(),remove()方法；
+
+21，快速失败(fail-fast)和安全失败(fail-safe)
+	Iterator的安全失败是基于对底层集合做拷贝，因此，它不受源集合上修改的影响。java.util包下面的所有的集合类都是快速失败的，而java.util.concurrent包下面的所有的类都是安全失败的。快速失败的迭代器会抛出ConcurrentModificationException异常，而安全失败的迭代器永远不会抛出这样的异常。
+
+22，HashMap的工作原理
+	map的底层实现是数组+链表；数组不再直接放键值的entry，而是数组放链表（通过key.hashcode%数组长度取余找到链表的存放位置），链表中存放键值的entry；在map中存、取数的时候不用先遍历数组，先根据key.hashcode取余找到相应的数组位置，再遍历链表
+	Java中的HashMap是以键值对(key-value)的形式存储元素的。HashMap需要一个hash函数，它使用hashCode()和equals()方法来向集合/从集合添加和检索元素。当调用put()方法的时候，HashMap会计算key的hash值，然后把键值对存储在集合中合适的索引上。如果key已经存在了，value会被更新成新值。HashMap的一些重要的特性是它的容量(capacity)，负载因子(load factor)和扩容极限(threshold resizing)。
+
+23，hashCode()和equals()
+	java规定，两个内容相同的对象应该具有相等的hashcode即equals()相等，必有hashcode()相等，反之不然
+
+24，HashMap和Hashtable
+	HashMap允许键和值是null，而Hashtable不允许键或者值是null。
+	HashMap线程不安全，而Hashtable线程安全。
+
+
